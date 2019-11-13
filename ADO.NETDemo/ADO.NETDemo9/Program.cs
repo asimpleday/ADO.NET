@@ -13,21 +13,27 @@ namespace ADO.NETDemo9
         static void Main(string[] args)
         {
             // 调用数据访问对象返回扩展实体对象集合
-            StudentService objStudentService = new StudentService();
-            List<StudentExt> list = objStudentService.GetStudentExt();
+            //StudentService objStudentService = new StudentService();
+            //List<StudentExt> list = objStudentService.GetStudentExt();
 
-            // 解析扩展实体对象集合
-            if (list.Count != 0)
+            //// 解析扩展实体对象集合
+            //if (list.Count != 0)
+            //{
+            //    // 解析对象
+            //    foreach (StudentExt item in list)
+            //    {
+            //        Console.WriteLine(item.ObjStudent.StudentName + "--" +item.ObjStudent.StudentId + "--" + item.ObjClass.ClassName);
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("没有要显示的数据！");
+            //}
+
+            List<StudentSimpleExt> list = new StudentService().GetStudentScore();
+            foreach (Student item in list)
             {
-                // 解析对象
-                foreach (StudentExt item in list)
-                {
-                    Console.WriteLine(item.ObjStudent.StudentName + "--" +item.ObjStudent.StudentId + "--" + item.ObjClass.ClassName);
-                }
-            }
-            else
-            {
-                Console.WriteLine("没有要显示的数据！");
+                Console.WriteLine(item.StudentId + "--" + item.StudentName + "--" + item.Birthday);
             }
         }
     }

@@ -45,7 +45,25 @@
 
 
 
-### ADO.NETDemo6
+### ADO.NETDemo7
 
 使用简单实体封装单一对象
+
+
+
+### ADO.NETDemo8
+
+使用List集合封装多个同类型对象
+
+
+
+### ADO.NETDemo9
+
+组合扩展实体的应用
+
+
+
+### ADO.NETDemo9.1
+
+自己练习
 

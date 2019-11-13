@@ -12,7 +12,7 @@ namespace ADO.NETDemo9.DAL
     {
         public Student GetStudentById(string studentId)
         {
-            string sql = "select StudentName, Gender, Birthday, StudentIdNo, Age, PhoneNumber, StudentAddress, ClassId from Students where StudentId = {0}";
+            string sql = "select * where StudentId = {0}";
             sql = string.Format(sql, studentId);
 
             // 执行查询
@@ -109,6 +109,29 @@ namespace ADO.NETDemo9.DAL
 
             objReader.Close();
             return extList;
+        }
+
+        public List<StudentSimpleExt> GetStudentScore()
+        {
+            string sql = "select Students.StudentId, StudentName, ClassName, AvgScore=(CSharp + SQLServer)/2 from Students";
+            sql += "inner join StudentClass on Students.ClassId = StudentClass.ClassId";
+            sql += "inner join ScoreList on ScoreList.StudentId = Students.StudentId";
+
+            SqlDataReader objReader = SQLHelper.GetReader(sql);
+            List<StudentSimpleExt> list = new List<StudentSimpleExt>();
+
+            while (objReader.Read())
+            {
+                list.Add(new StudentSimpleExt()
+                {
+                    StudentId = Convert.ToInt32(objReader["StudentId"]),
+                    StudentName = objReader["StudentName"].ToString(),
+                    ClassName = objReader["ClassName"].ToString(),
+                    AvgScore = Convert.ToInt32(objReader["AvgScore"])
+                });
+            }
+            objReader.Close();
+            return list;
         }
     }
 }

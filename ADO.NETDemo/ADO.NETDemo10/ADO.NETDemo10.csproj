@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7C44DB81-C5E4-4DA7-919B-D03F2074431B}</ProjectGuid>
+    <ProjectGuid>{7F7A8A5B-642A-4C75-8B39-4AE6F1EB6B6D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ADO.NETDemo9</RootNamespace>
-    <AssemblyName>ADO.NETDemo9</AssemblyName>
+    <RootNamespace>ADO.NETDemo10</RootNamespace>
+    <AssemblyName>ADO.NETDemo10</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,15 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\SQLHelper.cs" />
-    <Compile Include="DAL\StudentService.cs" />
-    <Compile Include="Models\Student.cs" />
-    <Compile Include="Models\StudentClass.cs" />
-    <Compile Include="Models\StudentExt.cs" />
-    <Compile Include="Models\StudentScore.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StudentSimpleExt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
